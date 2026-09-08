@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Startup Crowdfunding & Seed Pledge Portal</title>
+    <meta name="description" content="A campus-focused crowdfunding platform for student founders.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-primary);"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                Seed<span>Pledge</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Explore</a>
+                <a href="create-campaign.html">Start a Campaign</a>
+                <a href="admin.html">Admin</a>
+            </div>
+            <a href="create-campaign.html" class="btn">Fundraise</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero animate-fade-in">
+            <h1 class="text-gradient">Fueling Campus Innovation</h1>
+            <p>Discover, support, and pledge simulated funds to the brightest student-led startup ideas from your university.</p>
+            <a href="#campaigns" class="btn">Explore Campaigns</a>
+        </section>
+
+        <section id="campaigns">
+            <h2>Active Pitches</h2>
+            <div class="campaign-grid" id="campaigns-container">
+                <!-- Campaigns injected via JS -->
+            </div>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCampaigns();
+        });
+    </script>
+</body>
+</html>

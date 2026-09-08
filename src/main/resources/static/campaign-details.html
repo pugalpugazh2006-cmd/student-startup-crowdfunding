@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaign Details - SeedPledge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .campaign-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .campaign-layout { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--accent-primary);"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                Seed<span>Pledge</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Explore</a>
+                <a href="create-campaign.html">Start a Campaign</a>
+                <a href="admin.html">Admin</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div id="campaign-details" class="animate-fade-in">
+            <!-- Injected via JS -->
+            Loading campaign details...
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const pitchId = urlParams.get('id');
+            if (pitchId) {
+                loadCampaignDetails(pitchId);
+            } else {
+                document.getElementById('campaign-details').innerHTML = '<p>Campaign not found.</p>';
+            }
+        });
+    </script>
+</body>
+</html>
