@@ -1,6 +1,6 @@
 # Student Startup Crowdfunding & Seed Pledge Portal
 
-A campus-focused crowdfunding platform built for a student project.
+A campus-focused platform for student startup campaigns and simulated seed pledges.
 
 ## Tech Stack
 - Frontend: HTML5, CSS3 (Vanilla + Grid), JavaScript (Vanilla + Fetch API)
