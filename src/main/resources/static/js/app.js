@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:8080/api/pitches';
+const API_BASE_URL = 'https://student-startup-crowdfunding-production.up.railway.app/api/pitches';
 
 // --- Formatters ---
 const formatCurrency = (amount) => `₹${amount.toLocaleString('en-IN')}`;
@@ -10,7 +10,7 @@ async function loadCampaigns() {
         const response = await fetch(API_BASE_URL);
         const pitches = await response.json();
         const container = document.getElementById('campaigns-container');
-        
+
         if (pitches.length === 0) {
             container.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--text-secondary);">No campaigns found. Be the first to start one!</p>';
             return;
@@ -59,7 +59,7 @@ const createForm = document.getElementById('create-pitch-form');
 if (createForm) {
     createForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        
+
         const payload = {
             founderName: document.getElementById('founderName').value,
             title: document.getElementById('title').value,
@@ -304,7 +304,7 @@ async function loadAdminDashboard() {
         const response = await fetch(API_BASE_URL);
         const pitches = await response.json();
         const tbody = document.getElementById('admin-table-body');
-        
+
         if (pitches.length === 0) {
             tbody.innerHTML = '<tr><td colspan="6" style="text-align: center; color: var(--text-secondary);">No campaigns found.</td></tr>';
             return;
